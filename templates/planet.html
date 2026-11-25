@@ -10,3 +10,5 @@
 <p>Årslengde: {{ "%.2f"|format(planet_data.sideralOrbit / 365.25) }} jordår</p>
 <p>Døgn: {{ "%.2f"|format(planet_data.sideralRotation) }} timer</p>
 <p>Gjennomsnittstemperatur: {{ (planet_data.avgTemp - 273.15) | round | int }} °C</p>
+
+<a href="{{ url_for('index') }}">Tilbake til hovedsiden</a>

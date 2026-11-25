@@ -4,9 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Solar System Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1>Solar System Explorer</h1>
     <p>Utforsk solsystemets planeter.</p>
+
+    <div class="planet-container">
+    <div class="planet-list">
+        <a href="/planet/Mercury">
+            <img src="{{ url_for('static', filename='images/Mercury.png') }}" alt="Merkur">
+        </a>
+
+        <a href="/planet/Venus">
+            <img src="{{ url_for('static', filename='images/Venus.png') }}" alt="Venus">
+        </a>
+
+        <a href="/planet/Earth">
+            <img src="{{ url_for('static', filename='images/Earth.png') }}" alt="Jorden">
+        </a>
+
+        <a href="/planet/Mars">
+            <img src="{{ url_for('static', filename='images/Mars.png') }}" alt="Mars">
+        </a>
+
+        <a href="/planet/Jupiter">
+            <img src="{{ url_for('static', filename='images/Jupiter.png') }}" alt="Jupiter">
+        </a>
+    </div>
+</div>
+
+  
+
 </body>
 </html>
