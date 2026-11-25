@@ -1,4 +1,12 @@
-<h1>Dette er {{ planet_name }}</h1>
+<h1>{{ planet_data.englishName or planet_data.name }}</h1>
 
 <img src="{{ url_for('static', filename='images/' + planet_name.capitalize() + '.png') }}"
-     alt="{{ planet_name }}">
+
+<p>Masse: {{ "%.2f"|format(planet_data.mass.massValue) }} × 10<sup>{{ planet_data.mass.massExponent }}</sup> kg</p>
+<p>Volum: {{ "{:,.0f}".format(planet_data.vol.volValue * (10 ** planet_data.vol.volExponent)) | replace(",", " ") }} km³</p>
+<p>Diameter: {{ "%.0f"|format(planet_data.meanRadius * 2) }} km</p>
+<p>Tetthet: {{ "%.2f"|format(planet_data.density) }} g/cm³</p>
+<p>Tyngdekraft: {{ planet_data.gravity }} m/s²</p>
+<p>Årslengde: {{ "%.2f"|format(planet_data.sideralOrbit / 365.25) }} jordår</p>
+<p>Døgn: {{ "%.2f"|format(planet_data.sideralRotation) }} timer</p>
+<p>Gjennomsnittstemperatur: {{ (planet_data.avgTemp - 273.15) | round | int }} °C</p>
